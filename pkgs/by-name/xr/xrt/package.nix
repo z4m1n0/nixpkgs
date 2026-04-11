@@ -26,13 +26,13 @@
 
 stdenv.mkDerivation (finalAttrs: {
   pname = "xrt";
-  version = "202610.2.21.21";
+  version = "2.21.75";
 
   src = fetchFromGitHub {
     owner = "Xilinx";
     repo = "XRT";
     rev = finalAttrs.version;
-    hash = "sha256-Foj33/U6waL81EzJ0ah66xCXEGWEkvhwmurKobfCevE=";
+    hash = "sha256-f/EofQsjFXC6uMI5pzZkofATVBarRHp9Yt/ADBWL2/8=";
     fetchSubmodules = true;
   };
 

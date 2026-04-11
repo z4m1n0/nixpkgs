@@ -18,16 +18,16 @@
 
 stdenv.mkDerivation (finalAttrs: {
   pname = "xrt-plugin-amdxdna";
-  version = "202610.2.21.21";
+  version = "2.21.75";
 
   # Exported for use in symlinkJoin postBuild
-  pluginVersion = "2.21.0";
+  pluginVersion = finalAttrs.version;
 
   src = fetchFromGitHub {
     owner = "amd";
     repo = "xdna-driver";
-    rev = "2.21.75";
-    hash = "sha256-bBiI42bwap6O59MQdIylX7uz+fLUF75RTyNWTJfAFds=";
+    rev = finalAttrs.version;
+    hash = "sha256-pc9ou88iNAQpjcFvv9NluF8ag87v1KA/14bgfKWe0NE=";
     fetchSubmodules = true;
   };
 
@@ -35,8 +35,8 @@ stdenv.mkDerivation (finalAttrs: {
   xrtSrc = fetchFromGitHub {
     owner = "Xilinx";
     repo = "XRT";
-    rev = "202610.2.21.21";
-    hash = "sha256-Foj33/U6waL81EzJ0ah66xCXEGWEkvhwmurKobfCevE=";
+    rev = finalAttrs.version;
+    hash = "sha256-f/EofQsjFXC6uMI5pzZkofATVBarRHp9Yt/ADBWL2/8=";
     fetchSubmodules = true;
   };
 
